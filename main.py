@@ -23,6 +23,7 @@ ENTRY = (
 
 # Gate: one line of 1 to 200 characters, non-whitespace UTF-8 text.
 assert 1 <= len(ENTRY) <= 200 and ENTRY.strip(), "entry violates the gate"
+assert "\n" not in ENTRY and "\r" not in ENTRY, "entry must be a single line"
 
 
 def main() -> None:
